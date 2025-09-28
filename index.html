@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Surya Shankara Oils Shop — Narsapur</title>
+  <meta name="description" content="Surya Shankara Oils — Quality edible oils in Narsapur since 1959. English & Telugu price list, PhonePe scanner, GST details." />
+  <style>
+    :root{--accent:#E3A600;--muted:#6b6b6b;--bg:#fbfbfd;--card:#ffffff}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,"Noto Sans",sans-serif;margin:0;background:linear-gradient(180deg,#fff 0%,#f7fbff 100%)}
+    header{background:linear-gradient(90deg,var(--accent),#ffdd66);color:#111;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+    .brand img{max-width:260px;height:auto;object-fit:contain;margin-bottom:8px}
+    h1{margin:0;font-size:28px;color:#222}
+    .sub{font-size:14px;color:#333;margin-top:4px}
+
+    .contact{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:10px;width:100%}
+    .contact a{background:#fff;padding:8px 12px;border-radius:10px;display:flex;gap:10px;align-items:center;text-decoration:none;color:#111;box-shadow:0 6px 14px rgba(0,0,0,0.06)}
+
+    main{max-width:1100px;margin:26px auto;padding:0 18px}
+    .hero{display:flex;gap:20px;align-items:center}
+    .hero-left{flex:1}
+    .hero-right{width:320px}
+    .badge{display:inline-block;background:#fff;padding:6px 10px;border-radius:999px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    p.lead{color:var(--muted);margin-top:10px}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:14px;border-radius:14px;box-shadow:0 10px 30px rgba(13,30,60,0.06);display:flex;flex-direction:column;gap:10px}
+    .card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .card h3{margin:0;font-size:16px}
+    .price{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+    .price .telugu{font-size:13px;color:var(--muted)}
+    .price .amt{font-weight:700;color:#0b6b3a}
+
+    footer{max-width:1100px;margin:28px auto;padding:18px;background:#fff;border-radius:12px;box-shadow:0 8px 20px rgba(10,20,40,0.04)}
+    .footer-grid{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+    .footer-logo{width:120px;height:auto;border-radius:8px;overflow:hidden}
+    .footer-logo img{width:100%;height:auto;object-fit:contain}
+    .gst{font-weight:700}
+
+    @media (max-width:720px){.hero{flex-direction:column}.hero-right{width:100%}}
+
+    .searchbar{display:flex;gap:8px;margin-top:16px}
+    .searchbar input{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(10,10,10,0.06)}
+    .searchbar button{padding:12px 14px;border-radius:10px;border:none;background:var(--accent);color:#111;font-weight:700}
+
+    .qr-box{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+    .qr-box img{width:100%;max-width:200px}
+    .pay-list{display:flex;flex-direction:column;gap:8px}
+    .pay-list div{background:#f8f8ff;padding:8px;border-radius:8px}
+
+    /* New styles for section nav */
+    .section-nav{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+    .section-nav button{border:none;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.9);cursor:pointer;font-weight:700;box-shadow:0 6px 14px rgba(0,0,0,0.04)}
+    .section-nav button.active{background:var(--accent);color:#111}
+
+    /* small helper */
+    .section-title{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
+    .empty-msg{color:var(--muted);padding:14px;background:#fff;border-radius:10px;text-align:center}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="shop_logo.jpeg" alt="Surya Shankara Oils Logo"/>
+      <h1>Surya Shankara Oils Shop</h1>
+      <div class="sub">Established 1959 • Narsapur, Andhra Pradesh</div>
+    </div>
+
+    <div class="contact">
+      <a href="tel:+917780254504">📞 +91 77802 54504</a>
+      <a href="https://maps.app.goo.gl/QYYyoHmrPmBkmvaR7" target="_blank" rel="noopener" title="Open location in Google Maps">📍 Visit</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <span class="badge">Family-run • Since 1959</span>
+        <h2 style="margin-top:12px">Pure, trusted edible oils & ingredients</h2>
+        <p class="lead">We stock a wide range of oils, seeds and telagapindi (తేలగపిండి). Prices shown are per litre / per kg unless specified. Click any item for more details and larger image.</p>
+
+        <div class="section-nav" id="sectionNav">
+          <button data-section="oils" class="active">Oils</button>
+          <button data-section="seeds">Seeds</button>
+          <button data-section="telagapindi">Telagapindi</button>
+        </div>
+
+        <div style="margin-top:10px" class="searchbar">
+          <input id="search" placeholder="Search name e.g., Groundnut / వేరుశనగ నూనె"/>
+          <button id="searchBtn">Search</button>
+          <button id="clearBtn" style="background:#fff;border:1px solid rgba(10,10,10,0.06);font-weight:600">Clear</button>
+        </div>
+
+        <!-- Per-section grids -->
+        <div style="margin-top:12px">
+          <div id="oilsSection" class="section-block">
+            <div class="section-title">
+              <h3>Oils</h3>
+              <div class="sub" id="oilsCount"></div>
+            </div>
+            <div class="grid" id="oilsGrid"></div>
+          </div>
+
+          <div id="seedsSection" class="section-block" style="display:none">
+            <div class="section-title">
+              <h3>Seeds</h3>
+              <div class="sub" id="seedsCount"></div>
+            </div>
+            <div class="grid" id="seedsGrid"></div>
+          </div>
+
+          <div id="telagapindiSection" class="section-block" style="display:none">
+            <div class="section-title">
+              <h3>Telagapindi (తేలగపిండి)</h3>
+              <div class="sub" id="telagapindiCount"></div>
+            </div>
+            <div class="grid" id="telagapindiGrid"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="hero-right">
+        <div class="card">
+          <h3>Pay & Trust</h3>
+          <div class="qr-box">
+            <div class="pay-list">
+              <div><strong>PhonePe / UPI</strong><br/>Scan to pay</div>
+              <div><strong>GST</strong><br/><span class="gst">37AKLPN4480G1ZT</span></div>
+              <div><strong>Shop Phone</strong><br/>+91 77802 54504</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center">
+              <img src="https://chart.googleapis.com/chart?chs=240x240&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3D9999999999%2540upi%26pn%3DSurya%2BShankara%2BOils" alt="PhonePe QR (placeholder)"/>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:18px"></div>
+
+        <div class="card">
+          <h3>About the shop</h3>
+          <p style="margin:0;color:var(--muted)">Surya Shankara Oils Shop has served Narsapur since 1959. We source directly from trusted mills and ensure lab-tested purity.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section style="margin-top:20px">
+      <h3>Popular items</h3>
+      <p class="lead">Hand-picked from across categories.</p>
+      <div class="grid" id="popularGrid"></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-logo"><img src="shop_logo.jpeg" alt="Surya Shankara Oils Logo"/></div>
+      <div>
+        <strong>Surya Shankara Oils Shop</strong><br/>
+        D.NO: 3-5-29/1, Narsapur - 534275<br/>
+        Phone: +91 77802 54504
+      </div>
+      <div>
+        <div>GSTIN: <span class="gst">37AKLPN4480G1ZT</span></div>
+        <div style="margin-top:6px;color:var(--muted)">Serving Narsapur since 1959 • Built with ❤️. Show this page to customers or print the QR for payments.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Data separated by category — telagapindi updated from the photo you provided
+    const data = {
+      oils: [
+        {eng:'Groundnut Oil', tel:'వేరుశనగ నూనె', img:'Groundnut-Oil.png', price:'₹300', unit:'1 లీటర్'},
+        {eng:'Sunflower Oil', tel:'సన్ ఫ్లవర్ ఆయిల్', img:'Sunflower-Oil.png', price:'₹440', unit:'1 లీటర్'},
+        {eng:'Mustard Oil', tel:'ఆవాలు నూనె', img:'Mustard-Oil.png', price:'₹360', unit:'1 లీటర్'},
+        {eng:'Coconut Oil', tel:'కొబ్బరి నూనె', img:'Coconut-Oil.png', price:'₹400', unit:'1 లీటర్'},
+        {eng:'Safflower Oil', tel:'కుసుమ నూనె', img:'Safflower-Oil.png', price:'₹440', unit:'1 లీటర్'},
+        {eng:'Almond Oil', tel:'బాదం నూనె', img:'Almond-Oil.png', price:'₹3000', unit:'1 లీటర్'}
+      ],
+      seeds: [
+        {eng:'White Sesame Seeds', tel:'తెల్ల నువ్వులు', img:'white-seeds.png', price:'₹400', unit:'1 kg'},
+        {eng:'Black Sesame Seeds', tel:'నల్ల నువ్వులు', img:'black-seeds.png', price:'₹260', unit:'1 kg'},
+        {eng:'Kalonji Seeds', tel:'కలోంజి', img:'kalonji-seeds.png', price:'₹1200', unit:'1 kg'},
+        {eng:'Niger Seeds', tel:'వెర్రి నువ్వులు', img:'niger-seeds.png', price:'₹1000', unit:'1 kg'},
+        {eng:'Dry Coconut (Copra)', tel:'ఎండిన కొబ్బరి', img:'dry-coconut.png', price:'₹350', unit:'1 kg'},
+        {eng:'Jaggery', tel:'బెల్లం', img:'jaggery.png', price:'₹60', unit:'1 kg'},
+        {eng:'Curry Chilli Powder', tel:'కారం పొడి', img:'curry-chilli.png', price:'₹200', unit:'1 kg'},
+        {eng:'Roasted Bengal Gram', tel:'వేయించిన శనగలు', img:'roasted.png', price:'₹80', unit:'1 kg'},
+        {eng:'Peanuts', tel:'వేరుశనగ', img:'peanuts.png', price:'₹120', unit:'1 kg'}
+      ],
+      // === Telagapindi list exactly from the board (Telugu + prices) ===
+      telagapindi: [
+        {eng:'Kura Telagapindi', tel:'కూర తేలగపిండి', img:'Telagapindi-Kura.png', price:'₹60', unit:'1 kg'},
+        {eng:'Chekka Ganugu Telagapindi', tel:'చెక్క గానుగ తేలగపిండి', img:'Telagapindi-Chekka.png', price:'₹100', unit:'1 kg'},
+        {eng:'Groundnut Cake (Telagapindi)', tel:'వేరుశనగ తేలగపిండి', img:'Groundnut-Cake.png', price:'₹150', unit:'1 kg'},
+        {eng:'Black Sesame Cake', tel:'నల్ల నువ్వుల తేలగపిండి', img:'Sesame-Cake-Black.png', price:'₹70', unit:'1 kg'},
+        {eng:'Mustard Cake', tel:'ఆవాలు తేలగపిండి', img:'Mustard-Cake.png', price:'₹40', unit:'1 kg'},
+        {eng:'Niger Seeds Cake', tel:'వెర్రి నువ్వుల తేలగపిండి', img:'Niger-Cake.png', price:'₹60', unit:'1 kg'},
+        {eng:'Sesame Cake (special)', tel:'నువ్వుల తేలగపిండి (గల్లిపూరక)', img:'Sesame-Cake-Special.png', price:'₹35', unit:'1 kg'},
+        {eng:'Almond Cake', tel:'బాదం తేలగపిండి', img:'Almond-Cake.png', price:'₹100', unit:'1 kg'},
+        {eng:'Cashew Cake', tel:'జీడి తేలగపిండి', img:'Cashew-Cake.png', price:'₹40', unit:'1 kg'}
+      ]
+    };
+
+    const oilsGrid = document.getElementById('oilsGrid');
+    const seedsGrid = document.getElementById('seedsGrid');
+    const telagapindiGrid = document.getElementById('telagapindiGrid');
+    const popularGrid = document.getElementById('popularGrid');
+
+    const oilsCount = document.getElementById('oilsCount');
+    const seedsCount = document.getElementById('seedsCount');
+    const telagapindiCount = document.getElementById('telagapindiCount');
+
+    const sectionButtons = Array.from(document.querySelectorAll('#sectionNav button'));
+    let activeSection = 'oils';
+
+    function createCard(it){
+      const div = document.createElement('div'); div.className='card';
+      div.innerHTML = `
+        <img src="${it.img}" alt="${it.eng}" onerror="this.onerror=null;this.src='shop_logo.jpeg'"/>
+        <h3>${it.eng}</h3>
+        <div class="telugu">${it.tel}</div>
+        <div class="price"><div class="telugu">${it.unit || '1 లీటర్'}</div><div class="amt">${it.price}</div></div>
+      `;
+      return div;
+    }
+
+    function renderList(list, container, countEl){
+      container.innerHTML = '';
+      if(!list || list.length === 0){
+        container.innerHTML = '<div class="empty-msg">No items found.</div>';
+        if(countEl) countEl.textContent = '0 items';
+        return;
+      }
+      list.forEach(it=> container.appendChild(createCard(it)));
+      if(countEl) countEl.textContent = `${list.length} items`;
+    }
+
+    // initial render
+    renderList(data.oils, oilsGrid, oilsCount);
+    renderList(data.seeds, seedsGrid, seedsCount);
+    renderList(data.telagapindi, telagapindiGrid, telagapindiCount);
+
+    // Popular: pick top 4 from oils + seeds (adjust as needed)
+    const popular = [...data.oils.slice(0,3), ...data.seeds.slice(0,1)];
+    renderList(popular, popularGrid);
+
+    // Section switching
+    sectionButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const sec = btn.dataset.section;
+        if(!sec) return;
+        activeSection = sec;
+        sectionButtons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // show/hide sections
+        document.getElementById('oilsSection').style.display = (sec==='oils') ? '' : 'none';
+        document.getElementById('seedsSection').style.display = (sec==='seeds') ? '' : 'none';
+        document.getElementById('telagapindiSection').style.display = (sec==='telagapindi') ? '' : 'none';
+
+        // clear search box when switching (optional)
+        document.getElementById('search').value = '';
+      });
+    });
+
+    // Search (filters only the active section)
+    function applySearch(){
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      if(!q){
+        // restore full lists
+        renderList(data.oils, oilsGrid, oilsCount);
+        renderList(data.seeds, seedsGrid, seedsCount);
+        renderList(data.telagapindi, telagapindiGrid, telagapindiCount);
+        return;
+      }
+      const match = (it) => {
+        return (it.eng && it.eng.toLowerCase().includes(q)) || (it.tel && it.tel.includes(q));
+      };
+
+      if(activeSection === 'oils'){
+        renderList(data.oils.filter(match), oilsGrid, oilsCount);
+      } else if(activeSection === 'seeds'){
+        renderList(data.seeds.filter(match), seedsGrid, seedsCount);
+      } else if(activeSection === 'telagapindi'){
+        renderList(data.telagapindi.filter(match), telagapindiGrid, telagapindiCount);
+      }
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', applySearch);
+    document.getElementById('search').addEventListener('keydown', (e)=>{ if(e.key === 'Enter') applySearch(); });
+    document.getElementById('clearBtn').addEventListener('click', ()=>{
+      document.getElementById('search').value = '';
+      // reset current section only (keeps other lists intact)
+      if(activeSection === 'oils') renderList(data.oils, oilsGrid, oilsCount);
+      if(activeSection === 'seeds') renderList(data.seeds, seedsGrid, seedsCount);
+      if(activeSection === 'telagapindi') renderList(data.telagapindi, telagapindiGrid, telagapindiCount);
+    });
+
+    // small accessibility: allow deep-linking to a section via URL hash (#seeds etc.)
+    function checkHash(){
+      const h = location.hash.replace('#','');
+      if(h && ['oils','seeds','telagapindi'].includes(h)){
+        document.querySelector(`#sectionNav button[data-section="${h}"]`).click();
+        // scroll into view a bit
+        setTimeout(()=>document.querySelector(`#${h}Section`)?.scrollIntoView({behavior:'smooth'}), 120);
+      }
+    }
+    window.addEventListener('hashchange', checkHash);
+    checkHash();
+
+  </script>
+</body>
+</html>
