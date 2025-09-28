@@ -58,6 +58,9 @@
     /* small helper */
     .section-title{display:flex;align-items:center;gap:12px;justify-content:space-between;flex-wrap:wrap}
     .empty-msg{color:var(--muted);padding:14px;background:#fff;border-radius:10px;text-align:center}
+    /* Centered single card section */
+    .hero.centered{justify-content:center}
+    .hero.centered .hero-right{width:100%;max-width:380px}
   </style>
 </head>
 <body>
@@ -121,8 +124,17 @@
         </div>
 
       </div>
+    </section>
 
-      <aside class="hero-right">
+    <section style="margin-top:20px">
+      <h3>Popular items</h3>
+      <p class="lead">Hand-picked from across categories.</p>
+      <div class="grid" id="popularGrid"></div>
+    </section>
+  </main>
+
+  <section class="hero centered" style="margin:40px auto 20px auto">
+  <aside class="hero-right">
         <div class="card">
           <h3>Pay & Trust</h3>
           <div class="qr-box">
@@ -144,15 +156,8 @@
           <p style="margin:0;color:var(--muted)">Surya Shankara Oils Shop has served Narsapur since 1959. We source directly from trusted mills and ensure lab-tested purity.</p>
         </div>
       </aside>
-    </section>
-
-    <section style="margin-top:20px">
-      <h3>Popular items</h3>
-      <p class="lead">Hand-picked from across categories.</p>
-      <div class="grid" id="popularGrid"></div>
-    </section>
-  </main>
-
+   </section>
+</body>
   <footer id="contact">
     <div class="footer-grid">
       <div class="footer-logo"><img src="shop_logo.jpeg" alt="Surya Shankara Oils Logo"/></div>
